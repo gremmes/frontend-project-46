@@ -12,6 +12,9 @@
   "devDependencies": {
     "eslint": "^9.39.2"
   },
+  "bin": {
+    "gendiff": "bin/gendiff.js"
+  },
   "dependencies": {
     "commander": "^14.0.2"
   }
