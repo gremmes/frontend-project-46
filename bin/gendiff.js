@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { program } from 'commander';
-import { readFileSync } from 'node:fs';
+import parseDataFromFile from './parser.js';
 
 program
   .name('gendiff')
@@ -9,8 +9,8 @@ program
   .option('-f, --format [type]', 'output format')
   .arguments('<filepath1> <filepath2>')
   .action((file1, file2) => {
-    console.log('file1:' + readFileSync(file1));
-    console.log('file2:' + readFileSync(file2));
+    console.log(parseDataFromFile(file1));
+    console.log(parseDataFromFile(file2));
   })
 
 program.parse(process.argv);
