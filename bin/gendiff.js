@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { program } from 'commander';
-import parseDataFromFile from './parser.js';
+import parseDataFromFile from './parseDataFromFile.js';
 
 program
   .name('gendiff')

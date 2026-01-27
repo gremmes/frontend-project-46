@@ -1,10 +1,10 @@
-instal: 
+instal:
 		npm ci
 
 gendiff:
 		node bin/gendiff.js
 
-publish: 
+publish:
 		npm publish --dry-run
 
 lint:
