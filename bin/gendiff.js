@@ -8,9 +8,9 @@ program
   .version('1.0.0')
   .option('-f, --format [type]', 'output format')
   .arguments('<filepath1> <filepath2>')
-  .action((file1, file2) => {
-    console.log(parseDataFromFile(file1));
-    console.log(parseDataFromFile(file2));
+  .action((filepath1, filepath2) => {
+    console.log(parseDataFromFile(filepath1));
+    console.log(parseDataFromFile(filepath2));
   })
 
 program.parse(process.argv);
