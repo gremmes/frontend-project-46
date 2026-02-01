@@ -2,7 +2,7 @@
 import { program } from 'commander';
 import { readFileSync } from 'node:fs';
 import { cwd } from 'node:process';
-import { resolve } from 'node:path';
+import { resolve, extname } from 'node:path';
 import parseFromFile from './parseFromFile.js';
 
 program
@@ -16,11 +16,15 @@ program
 
     const normolizedFilePath1 = resolve(currentDirectory, filepath1);
     const fileContent1 = readFileSync(normolizedFilePath1, 'utf-8');
-    console.log(parseFromFile(fileContent1));
+    if (extname(normolizedFilePath1) === '.json') {
+      console.log(parseFromFile(fileContent1));
+    }
 
     const normolizedFilePath2 = resolve(currentDirectory, filepath2);
     const fileContent2 = readFileSync(normolizedFilePath2, 'utf-8');
-    console.log(parseFromFile(fileContent2));
+    if (extname(normolizedFilePath2) === '.json') {
+      console.log(parseFromFile(fileContent2));
+    }
   })
 
 program.parse(process.argv);
